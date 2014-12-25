@@ -1,0 +1,8 @@
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\bin\Debug\Chapter1_Exercise.exe
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\bin\Debug\Chapter1_Exercise.pdb
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\obj\Debug\Chapter1_Exercise.csprojResolveAssemblyReference.cache
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\obj\Debug\Chapter1_Exercise.ColorGenerator.resources
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\obj\Debug\Chapter1_Exercise.Properties.Resources.resources
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\obj\Debug\Chapter1_Exercise.csproj.GenerateResource.Cache
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\obj\Debug\Chapter1_Exercise.exe
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter1_Exercise\obj\Debug\Chapter1_Exercise.pdb

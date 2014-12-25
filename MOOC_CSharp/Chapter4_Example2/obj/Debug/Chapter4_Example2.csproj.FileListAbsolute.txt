@@ -1,0 +1,9 @@
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\bin\Debug\Chapter4_Example2.exe.config
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\bin\Debug\Chapter4_Example2.exe
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\bin\Debug\Chapter4_Example2.pdb
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.csprojResolveAssemblyReference.cache
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.Form1.resources
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.Properties.Resources.resources
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.csproj.GenerateResource.Cache
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.exe
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.pdb
