@@ -1,0 +1,9 @@
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\bin\Debug\Chapter2_Exercise.exe.config
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\bin\Debug\Chapter2_Exercise.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\bin\Debug\Chapter2_Exercise.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\obj\Debug\Chapter2_Exercise.csprojResolveAssemblyReference.cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\obj\Debug\Chapter2_Exercise.CaculationTest.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\obj\Debug\Chapter2_Exercise.Properties.Resources.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\obj\Debug\Chapter2_Exercise.csproj.GenerateResource.Cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\obj\Debug\Chapter2_Exercise.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter2_Exercise\obj\Debug\Chapter2_Exercise.pdb
