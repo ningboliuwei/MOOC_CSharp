@@ -1,0 +1,6 @@
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example4\bin\Debug\Chapter4_Example4.exe.config
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example4\bin\Debug\Chapter4_Example4.exe
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example4\bin\Debug\Chapter4_Example4.pdb
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example4\obj\Debug\Chapter4_Example4.csprojResolveAssemblyReference.cache
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example4\obj\Debug\Chapter4_Example4.exe
+E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example4\obj\Debug\Chapter4_Example4.pdb
