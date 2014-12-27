@@ -10,3 +10,9 @@ E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\bin\Debug\Chapter4_Example2.exe.config
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.exe
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\bin\Debug\Chapter4_Example2.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\bin\Debug\Chapter4_Example2.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.csprojResolveAssemblyReference.cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.Form1.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.Properties.Resources.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example2\obj\Debug\Chapter4_Example2.csproj.GenerateResource.Cache

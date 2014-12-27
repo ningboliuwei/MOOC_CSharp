@@ -1,31 +1,112 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chapter3_Exercise
+﻿namespace Chapter3_Exercise
 {
-	class CreditCardAccount:Account
+	internal class CreditCardAccount : Account
 	{
 		//额度
-		public double limit;
+		public double _limit;
 		//积分
-		public long score;
+		public long _score;
 
-		public CreditCardAccount(string id, string pwd, double money, double limit) : base()
+		public CreditCardAccount(string id, string pwd, double limit)
+			: base(id, pwd)
 		{
-			this.limit = limit;
+			_limit = limit;
+			_score = 0;
 		}
 
 		/// <summary>
-		/// 改变信用卡额度
+		///     额度属性
+		/// </summary>
+		public double Limit
+		{
+			get { return _limit; }
+			set { _limit = value; }
+		}
+
+		/// <summary>
+		///     积分属性
+		/// </summary>
+		public long Score
+		{
+			get { return _score; }
+			set { _score = value; }
+		}
+
+		/// <summary>
+		///     改变信用卡额度
 		/// </summary>
 		/// <param name="limit">新的额度</param>
-		public void SetCreditLimit(double limit)
+		public void setLimit(double limit)
 		{
-			this.limit = limit;
+			_limit = limit;
+		}
+
+		/// <summary>
+		///     获取信用卡额度
+		/// </summary>
+		/// <returns></returns>
+		public double getLimit()
+		{
+			return _limit;
+		}
+
+		/// <summary>
+		///     改变积分
+		/// </summary>
+		/// <param name="score"></param>
+		/// <returns></returns>
+		public void setScore(long score)
+		{
+			_score = score;
+		}
+
+		/// <summary>
+		///     获取积分
+		/// </summary>
+		/// <returns></returns>
+		public long getScore()
+		{
+			return _score;
+		}
+
+
+		public override bool WithdrawMoney(double money)
+		{
+			//若当前余额减去提取金额后仍多余或等于额度，那么允许消费
+			if (_money - money >= -_limit)
+			{
+				_money -= money;
+				return true;
+			}
+			return false;
+		}
+
+
+		/// <summary>
+		///     增加积分方法
+		/// </summary>
+		/// <param name="score"></param>
+		/// <returns></returns>
+		public bool AddScore(long score)
+		{
+			_score += score;
+			return true;
+		}
+
+		/// <summary>
+		///     扣积分方法
+		/// </summary>
+		/// <param name="score"></param>
+		/// <returns></returns>
+		public bool ReduceScore(long score)
+		{
+			if (_score - score >= 0)
+			{
+				_score -= score;
+				return true;
+			}
+
+			return false;
 		}
 	}
 }
-

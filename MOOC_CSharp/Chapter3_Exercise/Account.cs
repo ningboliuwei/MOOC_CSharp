@@ -1,73 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Chapter3_Exercise
+﻿namespace Chapter3_Exercise
 {
 	public class Account
 	{
-		private double money; //decimal money;
-		private string id;
-		private string pwd;
+		protected string _id;
+		protected double _money; //decimal money;
+		protected string _pwd;
 		//string name;
 
-		public Account() 
+		public Account()
 		{
-			
 		}
 
-		public Account(string id, string pwd, double money)
+		public Account(string id, string pwd)
 		{
-			this.id = id;
-			this.pwd = pwd;
-			this.money = money;
+			_id = id;
+			_pwd = pwd;
+			_money = 0;
 		}
 
 		public double getMoney()
 		{
-			return money;
+			return _money;
 		}
 
 		public void setMoney(double val)
 		{
-			this.money = val;
+			_money = val;
 		}
 
 		public string getId()
 		{
-			return id;
+			return _id;
 		}
 
 		public void setId(string id)
 		{
-			this.id = id;
+			_id = id;
 		}
 
 		public string getPwd()
 		{
-			return pwd;
+			return _pwd;
 		}
 
 		public void setPwd(string pwd)
 		{
-			this.pwd = pwd;
+			_pwd = pwd;
 		}
 
 		public bool SaveMoney(double money)
 		{
 			if (money < 0) return false; //卫语句
 
-			this.money += money;
+			_money += money;
 			return true;
 		}
 
-		public bool WithdrawMoney(double money)
+		public virtual bool WithdrawMoney(double money)
 		{
-			if (this.money >= money)
+			if (_money >= money)
 			{
-				this.money -= money;
+				_money -= money;
 				return true;
 			}
 
@@ -76,7 +69,7 @@ namespace Chapter3_Exercise
 
 		public bool IsMatch(string id, string pwd)
 		{
-			return id == this.id && pwd == this.pwd;
+			return id == _id && pwd == _pwd;
 		}
 	}
 }

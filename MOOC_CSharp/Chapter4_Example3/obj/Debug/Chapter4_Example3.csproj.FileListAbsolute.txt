@@ -4,3 +4,9 @@ E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\bin\Debug\Chapter4_Example3.
 E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\obj\Debug\Chapter4_Example3.csprojResolveAssemblyReference.cache
 E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\obj\Debug\Chapter4_Example3.exe
 E:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\obj\Debug\Chapter4_Example3.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\bin\Debug\Chapter4_Example3.exe.config
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\bin\Debug\Chapter4_Example3.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\bin\Debug\Chapter4_Example3.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\obj\Debug\Chapter4_Example3.csprojResolveAssemblyReference.cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\obj\Debug\Chapter4_Example3.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter4_Example3\obj\Debug\Chapter4_Example3.pdb
