@@ -1,0 +1,9 @@
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\bin\Debug\Chapter6_Exercise.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\bin\Debug\Chapter6_Exercise.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\obj\Debug\Chapter6_Exercise.csprojResolveAssemblyReference.cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\obj\Debug\Chapter6_Exercise.Properties.Resources.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\obj\Debug\Chapter6_Exercise.csproj.GenerateResource.Cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\obj\Debug\Chapter6_Exercise.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\obj\Debug\Chapter6_Exercise.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\bin\Debug\College_Grade4.txt
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter6_Exercise\obj\Debug\Chapter6_Exercise.frmMain.resources

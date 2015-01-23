@@ -1,0 +1,8 @@
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.csprojResolveAssemblyReference.cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.Properties.Resources.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.csproj.GenerateResource.Cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\bin\Debug\Chapter7_Exercise.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\bin\Debug\Chapter7_Exercise.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.exe
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.pdb
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Game2048.Form1.resources
