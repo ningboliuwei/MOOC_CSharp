@@ -1,32 +1,46 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿#region
+
+using System;
 using System.Drawing;
-using System.Text;
+using System.IO;
 using System.Windows.Forms;
+using Chapter7_Exercise;
+
+#endregion
 
 namespace Game2048
 {
 	public partial class Form1 : Form
 	{
+		private const int N = 4; //方块在纵向及横向上的个数
+		private int[,] board; //记录每个方块上的数
+		private Button[] btns;
+		private frmPad frm;
+
+		private int gameMode;
+		private string highestScoreFilePath = Application.StartupPath + "\\hs.dat";
+		private int margin = 25;
+		private int previousHighestScore;
+		private int score;
+		private string[] str1 = { "夏", "商", "周", "秦", "汉", "隋", "唐", "宋", "元", "明", "清" };
+		private string[] str2 = { "一品", "二品", "三品", "四品", "五品", "六品", "七品", "八品", "九品", "良民", "贱民" };
+		private string[] str3 = { "士兵", "排长", "连长", "营长", "旅长", "师长", "军长", "司令", "大帅", "良民", "贱民" };
+
 		public Form1()
 		{
 			InitializeComponent();
+			this.Closing += Form1_Closing;
 		}
 
-		const int N = 4;  //方块在纵向及横向上的个数
-		private int[,] board; //记录每个方块上的数
-		Button[] btns;
-		private int score;
-
-		int gameMode;
-		string[] str1 = { "夏", "商", "周", "秦", "汉", "隋", "唐", "宋", "元", "明", "清" };
-		string[] str2 = { "一品", "二品", "三品", "四品", "五品", "六品", "七品", "八品", "九品", "良民", "贱民" };
-		string[] str3 = { "士兵", "排长", "连长", "营长", "旅长", "师长", "军长", "司令", "大帅", "良民", "贱民" };
+		void Form1_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		{
+			if (MessageBox.Show("确定退出吗？", "问题", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+			{
+				e.Cancel = true;
+			}
+		}
 
 		//按钮与边框的距离
-		int margin = 25;
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
@@ -34,13 +48,20 @@ namespace Game2048
 			score = 0;
 			gameMode = 0;
 
-			this.Text = "Game2048";
-			this.DoubleBuffered = true;
+			Text = "Game2048";
+			DoubleBuffered = true;
 
+			previousHighestScore = LoadHighestScore();
+			ledHighest.Value = previousHighestScore.ToString();
 			StartGame();
 		}
+
 		private void StartGame()
 		{
+			//初始化已生成的数字
+			board = new int[N, N];
+			score = 0;
+
 			//设置两个不同的块为随机的2或4
 			Random rnd = new Random();
 			int n1 = rnd.Next(N * N);
@@ -48,8 +69,7 @@ namespace Game2048
 			do
 			{
 				n2 = rnd.Next(N * N);
-			}
-			while (n1 == n2);
+			} while (n1 == n2);
 			board[n1 / N, n1 % N] = rnd.Next(2) * 2 + 2; //设为2或4
 			board[n2 / N, n2 % N] = rnd.Next(2) * 2 + 2;
 
@@ -61,13 +81,14 @@ namespace Game2048
 		{
 			//生成按钮
 			GenerateAllButtons();
-
 		}
 
 
 		//产生所有的按钮
 		private void GenerateAllButtons()
 		{
+			pnlBoard.Controls.Clear();
+
 			btns = new Button[N * N];
 
 			//原始代码
@@ -79,18 +100,18 @@ namespace Game2048
 
 
 			//按钮之间的距离
-			int padding = (pnlBoard.Width - margin * 2 - w * N) / (N - 1);
+			int spacing = (pnlBoard.Width - margin * 2 - w * N) / (N - 1);
 			int x0 = margin;
 			int y0 = margin;
-			int d = w + padding;
+			int d = w + spacing;
 
 
 			for (int i = 0; i < btns.Length; i++)
 			{
 				Button btn = new Button();
 
-				int r = i / N;  //行
-				int c = i % N;  //列
+				int r = i / N; //行
+				int c = i % N; //列
 
 				btn.Left = x0 + c * d;
 				btn.Top = y0 + r * d;
@@ -103,7 +124,7 @@ namespace Game2048
 
 				btn.Visible = true;
 				btns[i] = btn;
-				this.pnlBoard.Controls.Add(btn);
+				pnlBoard.Controls.Add(btn);
 			}
 		}
 
@@ -112,19 +133,20 @@ namespace Game2048
 		{
 			RefreshAllButtons();
 		}
+
 		private void RefreshAllButtons()
 		{
 			for (int i = 0; i < btns.Length; i++)
 			{
-				int r = i / N;  //行
-				int c = i % N;  //列
+				int r = i / N; //行
+				int c = i % N; //列
 				btns[i].Text = GetTextOfButton(board[r, c]);
 				btns[i].BackColor = GetColorOfButton(board[r, c]);
 			}
 		}
 
 		//得到方块上应有的文字
-		string GetTextOfButton(int n)
+		private string GetTextOfButton(int n)
 		{
 			if (n < 2) return "";
 
@@ -134,20 +156,25 @@ namespace Game2048
 			{
 				return n.ToString();
 			}
-			else if (gameMode == 1)
+			if (gameMode == 1)
 			{
 				return str1[k];
 			}
-			else if (gameMode == 2)
+			if (gameMode == 2)
 			{
 				return str2[k];
 			}
+			if (gameMode == 3)
+			{
+				return str3[k];
+			}
+
 			return "";
 		}
 
 		//得到方块上应有的颜色
 
-		Color GetColorOfButton(int n)
+		private Color GetColorOfButton(int n)
 		{
 			if (n == 0) return Color.FromArgb(100, 200, 200, 200);
 
@@ -155,6 +182,12 @@ namespace Game2048
 			return Color.FromArgb(250, tmp, tmp, 0);
 		}
 
+
+		public void KeyPressed(Keys keyData)
+		{
+			Message msg = new Message();
+			ProcessCmdKey(ref msg, keyData);
+		}
 
 		//处理键盘消息
 		//要注意的是:由于按钮等元素的存在,窗体得不到KeyDown事件,所以在覆盖ProcessCmdKey
@@ -184,8 +217,27 @@ namespace Game2048
 				generateNewData();
 				RefreshUI();
 				ledScore.Value = score.ToString();
-				if (IsGameOver() == true)
-					MessageBox.Show("Game Over!");
+
+				//若当前分数比最高分高，则更改最高分为当前分数
+				if (score > Convert.ToInt32(ledHighest.Value))
+				{
+					ledHighest.Value = score.ToString();
+				}
+
+
+				if (IsGameOver())
+				{
+					if (score > previousHighestScore)
+					{
+						MessageBox.Show("游戏结束！恭喜您刷新了最高分！");
+						SaveHighestScore(score);
+					}
+					else
+					{
+						MessageBox.Show("游戏结束！");
+					}
+				}
+
 				return true;
 			}
 
@@ -201,23 +253,174 @@ namespace Game2048
 			do
 			{
 				nCount = rnd.Next(N * N);
-			}
-			while (board[nCount / N, nCount % N] != 0);
+			} while (board[nCount / N, nCount % N] != 0);
 
 			board[nCount / N, nCount % N] = rnd.Next(2) * 2 + 2; //其值设为2或者4
 		}
 
+		private bool IsGameOver()
+		{
+			int nCount = 0; //计算非空的格子的个数
+			for (int i = 0; i < board.GetLength(0); i++)
+			{
+				for (int j = 0; j < board.GetLength(1); j++)
+				{
+					if (board[i, j] > 0) nCount++;
+				}
+			}
+			if (nCount != N * N) return false;
+
+			//如果满了，并且没有可以相邻相同（可合并），则GameOver
+			for (int i = 0; i < board.GetLength(0) - 1; i++)
+			{
+				for (int j = 0; j < board.GetLength(1) - 1; j++)
+				{
+					if (board[i, j] == 0) continue;
+					if (board[i, j] == board[i + 1, j] || board[i, j] == board[i, j + 1])
+						return false;
+				}
+			}
+			return true;
+		}
+
+		private void 经典CToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			gameMode = 0;
+			SingleCheck(sender);
+		}
+
+		/// <summary>
+		///     用于实现游戏模式的单选效果
+		/// </summary>
+		/// <param name="sender"></param>
+		private void SingleCheck(object sender) //自定义函数
+		{
+			经典CToolStripMenuItem.Checked = false;
+			朝代DToolStripMenuItem.Checked = false;
+			朝廷PToolStripMenuItem.Checked = false;
+			军队AToolStripMenuItem.Checked = false;
+			((ToolStripMenuItem)sender).Checked = true;
+			RefreshAllButtons();
+		}
+
+		private void 朝廷PToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			gameMode = 2;
+			SingleCheck(sender);
+		}
+
+		private void 军队AToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			gameMode = 3;
+			SingleCheck(sender);
+		}
+
+		/// <summary>
+		///     创建最高分记录文件
+		/// </summary>
+		private void CreateHighestScoreFile()
+		{
+			int initialSocre = 0;
+
+			try
+			{
+				FileStream fs = new FileStream(highestScoreFilePath, FileMode.Create);
+				BinaryWriter writer = new BinaryWriter(fs);
+				writer.Write(initialSocre);
+				writer.Close();
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+		}
+
+		/// <summary>
+		///     从文件加载最高分
+		/// </summary>
+		/// <returns></returns>
+		private int LoadHighestScore()
+		{
+			try
+			{
+				//若不存在最高分记录文件，则创建一个新的，否则加载最高分
+				if (!File.Exists(highestScoreFilePath))
+				{
+					CreateHighestScoreFile();
+				}
+				else
+				{
+					int highestScore;
+
+					FileStream fs = new FileStream(highestScoreFilePath, FileMode.Open);
+					BinaryReader reader = new BinaryReader(fs);
+
+					highestScore = reader.ReadInt32();
+					reader.Close();
+					return highestScore;
+				}
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+
+			return -1;
+		}
+
+		/// <summary>
+		///     保存最高分
+		/// </summary>
+		/// <returns></returns>
+		private void SaveHighestScore(int score)
+		{
+			try
+			{
+				FileStream fs = new FileStream(highestScoreFilePath, FileMode.Open);
+				BinaryWriter writer = new BinaryWriter(fs);
+
+				writer.Write(score);
+				writer.Close();
+			}
+			catch (Exception e)
+			{
+				throw new Exception(e.Message);
+			}
+		}
+
+		private void 朝代DToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			gameMode = 1;
+			SingleCheck(sender);
+		}
+
+		private void 虚拟按键模式VToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			虚拟按键模式VToolStripMenuItem.Checked = !虚拟按键模式VToolStripMenuItem.Checked;
+
+			if (虚拟按键模式VToolStripMenuItem.Checked)
+			{
+				frm = new frmPad(this);
+				frm.Show();
+			}
+			else
+			{
+				frm.Close();
+			}
+		}
+
 		#region 关于四个方向的业务逻辑
+
 		private bool rightMove()
 		{
 			bool isMoved = false;
 			for (int j = 0; j < board.GetLength(0); j++) //针对所有的行
 			{
-				int x1 = -1, y1 = -1, value1 = -1;// x2=-1, y2=-1,value2=-1;
+				int x1 = -1, y1 = -1, value1 = -1; // x2=-1, y2=-1,value2=-1;
 				for (int i = board.GetLength(1) - 1; i > -1; i--) //从右边起，针对每个块进行处理
 				{
 					if (board[j, i] == 0) continue; //空的块不处理
-					if (board[j, i] == value1)//如果与上一次找到的相等，则合并
+					if (board[j, i] == value1) //如果与上一次找到的相等，则合并
 					{
 						board[x1, y1] = board[x1, y1] * 2;
 						board[j, i] = 0;
@@ -233,7 +436,7 @@ namespace Game2048
 							if (board[j, k] > 0)
 								break;
 						}
-						if (k - 1 != i)//如果这个非空的块左边有空位置
+						if (k - 1 != i) //如果这个非空的块左边有空位置
 						{
 							isMoved = true;
 							board[j, k - 1] = board[j, i]; //“移动”到这里（将其上的数字显示到这里）
@@ -247,12 +450,13 @@ namespace Game2048
 			}
 			return isMoved;
 		}
+
 		private bool upMove()
 		{
 			bool isMoved = false;
 			for (int i = 0; i < board.GetLength(1); i++)
 			{
-				int x1 = -1, y1 = -1, value1 = -1;// x2=-1, y2=-1,value2=-1;
+				int x1 = -1, y1 = -1, value1 = -1; // x2=-1, y2=-1,value2=-1;
 				for (int j = 0; j < board.GetLength(0); j++)
 				{
 					if (board[j, i] != 0)
@@ -277,7 +481,7 @@ namespace Game2048
 						}
 						else
 						{
-							if (board[j, i] == value1)//合并
+							if (board[j, i] == value1) //合并
 							{
 								board[x1, y1] = board[x1, y1] * 2;
 								board[j, i] = 0;
@@ -306,7 +510,6 @@ namespace Game2048
 						}
 					}
 				}
-
 			}
 			return isMoved;
 		}
@@ -316,7 +519,7 @@ namespace Game2048
 			bool isMoved = false;
 			for (int j = 0; j < board.GetLength(0); j++)
 			{
-				int x1 = -1, y1 = -1, value1 = -1;// x2=-1, y2=-1,value2=-1;
+				int x1 = -1, y1 = -1, value1 = -1; // x2=-1, y2=-1,value2=-1;
 				for (int i = 0; i < board.GetLength(1); i++)
 				{
 					if (board[j, i] != 0)
@@ -341,7 +544,7 @@ namespace Game2048
 						}
 						else
 						{
-							if (board[j, i] == value1)//合并
+							if (board[j, i] == value1) //合并
 							{
 								board[x1, y1] = board[x1, y1] * 2;
 								board[j, i] = 0;
@@ -370,11 +573,9 @@ namespace Game2048
 						}
 					}
 				}
-
 			}
 			return isMoved;
 		}
-
 
 
 		private bool downMove()
@@ -382,7 +583,7 @@ namespace Game2048
 			bool isMoved = false;
 			for (int i = 0; i < board.GetLength(1); i++)
 			{
-				int x1 = -1, y1 = -1, value1 = -1;// x2=-1, y2=-1,value2=-1;
+				int x1 = -1, y1 = -1, value1 = -1; // x2=-1, y2=-1,value2=-1;
 				for (int j = board.GetLength(0) - 1; j > -1; j--)
 				{
 					if (board[j, i] != 0)
@@ -407,7 +608,7 @@ namespace Game2048
 						}
 						else
 						{
-							if (board[j, i] == value1)//合并
+							if (board[j, i] == value1) //合并
 							{
 								board[x1, y1] = board[x1, y1] * 2;
 								board[j, i] = 0;
@@ -436,38 +637,21 @@ namespace Game2048
 						}
 					}
 				}
-
 			}
 			return isMoved;
 		}
 
 		#endregion
 
-		private bool IsGameOver()
+		private void 退出XToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			int nCount = 0; //计算非空的格子的个数
-			for (int i = 0; i < board.GetLength(0); i++)
-			{
-				for (int j = 0; j < board.GetLength(1); j++)
-				{
-					if (board[i, j] > 0) nCount++;
-				}
-			}
-			if (nCount != N * N) return false;
-
-			//如果满了，并且没有可以相邻相同（可合并），则GameOver
-			for (int i = 0; i < board.GetLength(0) - 1; i++)
-			{
-				for (int j = 0; j < board.GetLength(1) - 1; j++)
-				{
-					if (board[i, j] == 0) continue;
-					if (board[i, j] == board[i + 1, j] || board[i, j] == board[i, j + 1])
-						return false;
-				}
-			}
-			return true;
+			this.Close();
 		}
 
+		private void 重新开始RToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			StartGame();
+			
+		}
 	}
-
 }

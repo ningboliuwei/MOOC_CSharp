@@ -49,14 +49,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPad.Designer.cs">
+      <DependentUpon>frmPad.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SevenSegment.cs" />
+    <Compile Include="SevenSegment.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="SevenSegmentArray.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPad.resx">
+      <DependentUpon>frmPad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
