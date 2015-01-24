@@ -15,12 +15,17 @@ namespace Game2048
 		private const int N = 4; //方块在纵向及横向上的个数
 		private int[,] board; //记录每个方块上的数
 		private Button[] btns;
-		private frmPad frm;
+
+		//用于显示方向按键的窗体
+		private frmPad frmpad;
+		//最高分记录文件路径
+		private string highestScoreFilePath = Application.StartupPath + "\\hs.dat";
+		//按钮与窗体边框的距离
+		private int margin = 25;
+		//此前的最高分
+		private int previousHighestScore;
 
 		private int gameMode;
-		private string highestScoreFilePath = Application.StartupPath + "\\hs.dat";
-		private int margin = 25;
-		private int previousHighestScore;
 		private int score;
 		private string[] str1 = { "夏", "商", "周", "秦", "汉", "隋", "唐", "宋", "元", "明", "清" };
 		private string[] str2 = { "一品", "二品", "三品", "四品", "五品", "六品", "七品", "八品", "九品", "良民", "贱民" };
@@ -53,6 +58,7 @@ namespace Game2048
 
 			previousHighestScore = LoadHighestScore();
 			ledHighest.Value = previousHighestScore.ToString();
+
 			StartGame();
 		}
 
@@ -183,6 +189,10 @@ namespace Game2048
 		}
 
 
+		/// <summary>
+		/// 便于方向按钮窗体调用
+		/// </summary>
+		/// <param name="keyData"></param>
 		public void KeyPressed(Keys keyData)
 		{
 			Message msg = new Message();
@@ -283,11 +293,7 @@ namespace Game2048
 			return true;
 		}
 
-		private void 经典CToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			gameMode = 0;
-			SingleCheck(sender);
-		}
+
 
 		/// <summary>
 		///     用于实现游戏模式的单选效果
@@ -303,6 +309,19 @@ namespace Game2048
 			RefreshAllButtons();
 		}
 
+		private void 经典CToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			gameMode = 0;
+			SingleCheck(sender);
+		}
+
+		private void 朝代DToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			gameMode = 1;
+			SingleCheck(sender);
+		}
+
+
 		private void 朝廷PToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			gameMode = 2;
@@ -314,6 +333,7 @@ namespace Game2048
 			gameMode = 3;
 			SingleCheck(sender);
 		}
+
 
 		/// <summary>
 		///     创建最高分记录文件
@@ -388,11 +408,7 @@ namespace Game2048
 			}
 		}
 
-		private void 朝代DToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			gameMode = 1;
-			SingleCheck(sender);
-		}
+
 
 		private void 虚拟按键模式VToolStripMenuItem_Click(object sender, EventArgs e)
 		{
@@ -400,12 +416,12 @@ namespace Game2048
 
 			if (虚拟按键模式VToolStripMenuItem.Checked)
 			{
-				frm = new frmPad(this);
-				frm.Show();
+				frmpad = new frmPad(this);
+				frmpad.Show();
 			}
 			else
 			{
-				frm.Close();
+				frmpad.Close();
 			}
 		}
 
@@ -651,7 +667,7 @@ namespace Game2048
 		private void 重新开始RToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			StartGame();
-			
+
 		}
 	}
 }
