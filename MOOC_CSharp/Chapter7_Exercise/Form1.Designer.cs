@@ -42,12 +42,13 @@
 			// 
 			// ledScore
 			// 
+			this.ledScore.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.ledScore.ArrayCount = 9;
 			this.ledScore.ColorBackground = System.Drawing.Color.DarkGray;
 			this.ledScore.ColorDark = System.Drawing.Color.DimGray;
 			this.ledScore.ColorLight = System.Drawing.Color.Red;
 			this.ledScore.DecimalShow = true;
-			this.ledScore.Dock = System.Windows.Forms.DockStyle.Top;
 			this.ledScore.ElementPadding = new System.Windows.Forms.Padding(4);
 			this.ledScore.ElementWidth = 10;
 			this.ledScore.ItalicFactor = 0F;

@@ -25,6 +25,8 @@ namespace Game2048
 		string[] str2 = { "一品", "二品", "三品", "四品", "五品", "六品", "七品", "八品", "九品", "良民", "贱民" };
 		string[] str3 = { "士兵", "排长", "连长", "营长", "旅长", "师长", "军长", "司令", "大帅", "良民", "贱民" };
 
+		//按钮与边框的距离
+		int margin = 25;
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
@@ -75,8 +77,7 @@ namespace Game2048
 			//按钮宽度
 			int w = 60;
 
-			//按钮与边框的距离
-			int margin = 25;
+
 			//按钮之间的距离
 			int padding = (pnlBoard.Width - margin * 2 - w * N) / (N - 1);
 			int x0 = margin;
