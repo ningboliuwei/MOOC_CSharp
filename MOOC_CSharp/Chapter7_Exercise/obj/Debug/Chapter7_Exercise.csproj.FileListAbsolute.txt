@@ -6,3 +6,4 @@ C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.pdb
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Game2048.Form1.resources
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.frmPad.resources
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter7_Exercise\obj\Debug\Chapter7_Exercise.csprojResolveAssemblyReference.cache

@@ -1,7 +1,6 @@
 ﻿#region
 
 using System;
-using Chapter3_Exercise;
 
 #endregion
 
@@ -20,11 +19,15 @@ namespace Chapter4_Exercise
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <param name="args"></param>
+		//用于对接固定签名的事件处理程序的（所以用委托）
+		//实际上是一种类型
 		public delegate void BigMoneyFetchedEventHandler(object obj, BigMoneyFetchedEventArgs args);
 
 		/// <summary>
 		/// 声明事件
 		/// </summary>
+		//事件是特殊的委托对象
+		//创建了一个委托对象
 		public event BigMoneyFetchedEventHandler BigMoneyFetched;
 
 		private Bank bank;
@@ -40,7 +43,7 @@ namespace Chapter4_Exercise
 		void ATM_BigMoneyFetched(object obj, BigMoneyFetchedEventArgs args)
 		{
 			//输出事件信息
-			Console.WriteLine(string.Format("Warnning! {0} from {1} is withdrawed!", args.WithdrawAmount, args.SourceAccount));
+			Console.WriteLine(string.Format("Warnning! {0} from {1} is withdrawed!", args.WithdrawAmount, args.SourceAccount.getId()));
 		}
 
 		public ExitType Transaction()
@@ -99,8 +102,14 @@ namespace Chapter4_Exercise
 					{
 						if (BigMoneyFetched != null)
 						{
-							BigMoneyFetched(this, new BigMoneyFetchedEventArgs());
+							BigMoneyFetched(this, new BigMoneyFetchedEventArgs(account, money));
 						}
+					}
+
+					//有 1/3 概率抛出自定义异常
+					if (new Random().Next(3) < 1)
+					{
+						throw new BadCashException("Bad Cash Appeared!");
 					}
 				}
 			}
