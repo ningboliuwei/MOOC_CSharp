@@ -1,6 +1,5 @@
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter5_Exercise\bin\Debug\Chapter5_Exercise.exe
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter5_Exercise\bin\Debug\Chapter5_Exercise.pdb
-C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter5_Exercise\obj\Debug\Chapter5_Exercise.csprojResolveAssemblyReference.cache
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter5_Exercise\obj\Debug\Chapter5_Exercise.Properties.Resources.resources
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter5_Exercise\obj\Debug\Chapter5_Exercise.csproj.GenerateResource.Cache
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter5_Exercise\obj\Debug\Chapter5_Exercise.exe

@@ -3,4 +3,3 @@ C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter3_Exercise\bin\Debug\Chapter3_Exercise.
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter3_Exercise\bin\Debug\Chapter3_Exercise.pdb
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter3_Exercise\obj\Debug\Chapter3_Exercise.exe
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter3_Exercise\obj\Debug\Chapter3_Exercise.pdb
-C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter3_Exercise\obj\Debug\Chapter3_Exercise.csprojResolveAssemblyReference.cache
