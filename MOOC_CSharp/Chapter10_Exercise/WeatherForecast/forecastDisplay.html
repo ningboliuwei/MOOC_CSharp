@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Weather Forecast</title>
+    <style type="text/css">
+        #container {
+            background-image: url(https://s.yimg.com/os/mit/media/m/weather/images/fallbacks/lead/clear_d-e618500.jpg);
+            text-shadow: 2px 2px 1px black;
+            color: #ffffff;
+            padding: 5px;
+            font-family: Arial;
+        }
+
+        #general {
+            padding: 10px;
+        }
+
+        #location {
+            font-size: 40px;
+        }
+
+        #region {
+            height: 100px;
+        }
+
+        #weather {
+            margin: auto auto 15px auto;
+        }
+
+        #temp {
+            font-size: 80px;
+        }
+
+        .subContainer {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin: 0px 5px 5px 5px;
+        }
+
+        .forecastTable {
+            width: 100%;
+        }
+
+        .forecastTable td {
+            border-style: solid;
+            border-width: 0px 0px 1px 0px;
+            border-color: #ffffff;
+            height: 30px;
+        }
+
+        .detailsValue {
+            color: cornflowerblue;
+            margin: auto 40px auto 10px;
+        }
+
+        .forecastWeather {
+text-align: center;
+        }
+
+        
+
+        .forecastHigh {
+            width:20px;
+            float: right;
+            margin:10px;
+
+        }
+
+        .forecastLow {
+            width:20px;
+            float: right;
+            color:cornflowerblue;
+            margin:10px;
+
+        }
+
+
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="general">
+        <div id="location">Beijing</div>
+        <div id="region">Beijing, China</div>
+        <div id="weather">Sunny</div>
+        <div id="highAndLow">Highest 48 Lowest 30</div>
+        <div id="temp">36</div>
+    </div>
+
+    <div class="subContainer">
+        <table class="forecastTable">
+            <tr>
+                <th style="text-align: left; font-size:20px;">Forecast</th>
+            </tr>
+            <tr>
+                <td>Today<span class="forecastWeather">Mostly Clear</span><span class="forecastHigh">48</span><span
+                        class="forecastLow">36</span></td>
+
+            </tr>
+            <tr>
+                <td>Tomorrow</td>
+
+            </tr>
+            <tr>
+                <td>Sunday</td>
+
+            </tr>
+            <tr>
+                <td>Monday</td>
+
+            </tr>
+            <tr>
+                <td>Tuesday</td>
+
+            </tr>
+        </table>
+    </div>
+    <div class="subContainer">
+        <table class="detailsTable">
+            <tr>
+                <th style="text-align: left; font-size:20px;">Details</th>
+            </tr>
+            <tr>
+                <td>Feels like <span class="detailsValue">30</span>Visibility <span class="detailsValue">4.97ml</span>Humidity
+                    <span class="detailsValue">56%</span>UV
+                    Index <span class="detailsValue">2(low)</span>
+                </td>
+
+            </tr>
+
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
