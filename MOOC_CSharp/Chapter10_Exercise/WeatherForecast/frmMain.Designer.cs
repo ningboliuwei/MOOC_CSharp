@@ -49,7 +49,7 @@ namespace WeatherForecast
 			// 
 			this.cmbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbProvince.FormattingEnabled = true;
-			this.cmbProvince.Location = new System.Drawing.Point(67, 3);
+			this.cmbProvince.Location = new System.Drawing.Point(63, 3);
 			this.cmbProvince.Name = "cmbProvince";
 			this.cmbProvince.Size = new System.Drawing.Size(121, 26);
 			this.cmbProvince.TabIndex = 0;
@@ -58,20 +58,20 @@ namespace WeatherForecast
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
 			this.label1.Location = new System.Drawing.Point(3, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(58, 24);
+			this.label1.Size = new System.Drawing.Size(54, 28);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "省份";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.label2.Location = new System.Drawing.Point(194, 0);
+			this.label2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label2.Location = new System.Drawing.Point(190, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(58, 24);
+			this.label2.Size = new System.Drawing.Size(54, 28);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "城市";
 			// 
@@ -79,7 +79,7 @@ namespace WeatherForecast
 			// 
 			this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCity.FormattingEnabled = true;
-			this.cmbCity.Location = new System.Drawing.Point(258, 3);
+			this.cmbCity.Location = new System.Drawing.Point(250, 3);
 			this.cmbCity.Name = "cmbCity";
 			this.cmbCity.Size = new System.Drawing.Size(121, 26);
 			this.cmbCity.TabIndex = 3;

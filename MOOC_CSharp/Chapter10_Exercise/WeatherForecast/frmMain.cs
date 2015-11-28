@@ -16,8 +16,11 @@ namespace WeatherForecast
 		List<LocationRecord> locationList = new List<LocationRecord>();
 		List<YahooCityCodeRecord> yahooCityCodeList = new List<YahooCityCodeRecord>();
 
+		//得到 Yahoo Weather 的天气后保存为的 XML 文件路径
 		readonly string xmlPath = Application.StartupPath + "\\weather.xml";
+		//用于转换 XML 文件的 XSL 文件
 		readonly string xslPath = Application.StartupPath + "\\weather.xsl";
+		//输出的结果 HTML 文件（用于显示在窗体中的 WebBrowser 控件中）
 		readonly string resultPath = Application.StartupPath + "\\weather.html";
 
 		public frmMain()
@@ -69,8 +72,11 @@ namespace WeatherForecast
 
 		private void btnQuery_Click(object sender, EventArgs e)
 		{
+			//根据城市代码查询天气，得到 XML 文件并保存到本地
 			SaveWeatherXml(GetYahooCityCode(cmbCity.Text));
+			//利用 XSL 文件对天气 XML 文件进行转换，并输出 HTML 文件
 			TransformResult();
+			//将 HTML 文件显示在 WebBrowser 控件中
 			ShowResult();
 		}
 
@@ -134,15 +140,21 @@ namespace WeatherForecast
 
 		private void frmMain_Load(object sender, EventArgs e)
 		{
+			//加载所有地区列表
 			LoadLocationList();
+			//加载所有城市代码列表
 			LoadCityCodeList();
+			//剔除在城市代码列表中不存在的地区
 			FilterLocations();
+			//将省份显示在省份下拉框中
 			BindProvinceComboBox();
+			//在城市下拉框中显示第一个省份的城市
 			BindCityComboBox(locationList[0].Province);
 		}
 
 		private void cmbProvince_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			//根据所选省份，改变城市下拉框中的选项
 			BindCityComboBox(cmbProvince.Text);
 		}
 
@@ -165,6 +177,7 @@ namespace WeatherForecast
 
 		}
 
+		//将天气 XML 文件转换为 HTML 文件
 		public void TransformResult()
 		{
 			var trans = new XslCompiledTransform();
@@ -172,6 +185,7 @@ namespace WeatherForecast
 			trans.Transform(xmlPath, resultPath);
 		}
 
+		//将 HTML 结果文件显示在 WebBrowser 控件中
 		public void ShowResult()
 		{
 			wbsResult.Navigate(resultPath);
