@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Xsl;
 
 namespace WeatherForecast
 {
@@ -14,6 +15,10 @@ namespace WeatherForecast
 	{
 		List<LocationRecord> locationList = new List<LocationRecord>();
 		List<YahooCityCodeRecord> yahooCityCodeList = new List<YahooCityCodeRecord>();
+
+		readonly string xmlPath = Application.StartupPath + "\\weather.xml";
+		readonly string xslPath = Application.StartupPath + "\\weather.xsl";
+		readonly string resultPath = Application.StartupPath + "\\weather.html";
 
 		public frmMain()
 		{
@@ -64,8 +69,9 @@ namespace WeatherForecast
 
 		private void btnQuery_Click(object sender, EventArgs e)
 		{
-			//获取数据后显示在 GridView 中
-			gridView.DataSource = GetYahooWeather(GetYahooCityCode(cmbCity.Text)).Tables[0];
+			SaveWeatherXml(GetYahooCityCode(cmbCity.Text));
+			TransformResult();
+			ShowResult();
 		}
 
 		//将省份显示到下拉列表中
@@ -140,126 +146,35 @@ namespace WeatherForecast
 			BindCityComboBox(cmbProvince.Text);
 		}
 
-		//以下为唐大仕老师例子中的代码
-		public static DataSet GetYahooWeather(string cityCode)
+		//获取指定城市的天气 XML 字符串并保存为 XML 文件
+		public void  SaveWeatherXml(string cityCode)
 		{
-			string strXml = "http://xml.weather.yahoo.com/forecastrss?p=" + cityCode;
+			string weatherXmlUrl = $"http://xml.weather.yahoo.com/forecastrss?p={cityCode}&u=c";
 
 			XmlDocument Weather = new XmlDocument();
-			Weather.Load(strXml);
-
-			XmlNamespaceManager namespacemanager = new
-				XmlNamespaceManager(Weather.NameTable);
-			namespacemanager.AddNamespace("yweather",
-				"http://xml.weather.yahoo.com/ns/rss/1.0");
-			XmlNodeList nodes = Weather.SelectNodes("/rss/channel/item/yweather:forecast", namespacemanager);
-
-			//XmlNodeList nodes = Weather.GetElementsByTagName("forecast", "http://xml.weather.yahoo.com/ns/rss/1.0");
-
-			DataSet dstWeather = new DataSet();
-			DataTable dtblWeather = new DataTable("Weather");
-			dstWeather.Tables.Add(dtblWeather);
-
-			dstWeather.Tables["Weather"].Columns.Add("Date", typeof(string));
-			dstWeather.Tables["Weather"].Columns.Add("Week", typeof(string));
-			dstWeather.Tables["Weather"].Columns.Add("Weather", typeof(string));
-			dstWeather.Tables["Weather"].Columns.Add("Tlow", typeof(string));
-			dstWeather.Tables["Weather"].Columns.Add("Thigh", typeof(string));
-
-			if (nodes.Count > 0)
+			try
 			{
-				foreach (XmlNode node in nodes)
-				{
-					DataRow drowWeather = dstWeather.Tables["Weather"].NewRow();
-
-					drowWeather["Date"] = EmonthToCmonth(node.SelectSingleNode
-						("@date").Value);
-					drowWeather["Week"] = EweekToCweek(node.SelectSingleNode
-						("@day").Value) + "(" + node.SelectSingleNode("@day").Value
-										  + ")";
-					drowWeather["Weather"] = node.SelectSingleNode("@text").Value;
-					drowWeather["Tlow"] = FToC(int.Parse(node.SelectSingleNode
-						("@low").Value)) + "℃";
-					drowWeather["Thigh"] = FToC(int.Parse(node.SelectSingleNode
-						("@high").Value)) + "℃";
-
-					dstWeather.Tables["Weather"].Rows.Add(drowWeather);
-				}
-
-				return dstWeather;
+				Weather.Load(weatherXmlUrl);
+				Weather.Save(xmlPath);
 			}
-			DataRow drowNone = dstWeather.Tables["Weather"].NewRow();
-			drowNone["Week"] = "None";
-			drowNone["Weather"] = "None";
-			drowNone["Tlow"] = "None";
-			drowNone["Thigh"] = "None";
-
-			dstWeather.Tables["Weather"].Rows.Add(drowNone);
-			return dstWeather;
-
-			return dstWeather;
-		}
-
-		/**/
-
-		/// <summary>
-		/// 从华氏转换成摄氏
-		/// </summary>
-		/// <param name="f">华氏度</param>
-		/// <returns></returns>
-		private static string FToC(int f)
-		{
-			return Math.Round((f - 32) / 1.8, 1).ToString();
-		}
-
-		/**/
-
-		/// <summary>
-		/// 从星期英文缩写转汉字
-		/// </summary>
-		/// <param name="strEweek">星期的英文缩写</param>
-		/// <returns></returns>
-		private static string EweekToCweek(string strEweek)
-		{
-			switch (strEweek)
+			catch (Exception)
 			{
-				case "Mon":
-					return "星期一";
-					break;
-				case "Tue":
-					return "星期二";
-					break;
-				case "Wed":
-					return "星期三";
-					break;
-				case "Thu":
-					return "星期四";
-					break;
-				case "Fri":
-					return "星期五";
-					break;
-				case "Sat":
-					return "星期六";
-					break;
-				case "Sun":
-					return "星期日";
-					break;
-				default:
-					return "传参错误";
-					break;
+				throw new Exception("无法获取天气");
 			}
+
+
 		}
 
-		/**/
-
-		/// <summary>
-		/// 从月英文缩写转汉字
-		/// </summary>
-		/// <param name="strReplace">需要替换的年月日</param>
-		/// <returns></returns>
-		private static string EmonthToCmonth(string strReplace)
+		public void TransformResult()
 		{
-			return Convert.ToDateTime(strReplace).ToString("yyyy年MM月dd日");
+			var trans = new XslCompiledTransform();
+			trans.Load(xslPath);
+			trans.Transform(xmlPath, resultPath);
+		}
+
+		public void ShowResult()
+		{
+			wbsResult.Navigate(resultPath);
 		}
 	}
 }

@@ -18,3 +18,4 @@ C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter10_Exercise\WeatherForecast\obj\Debug\W
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter10_Exercise\WeatherForecast\obj\Debug\WeatherForecast.exe
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter10_Exercise\WeatherForecast\obj\Debug\WeatherForecast.pdb
 C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter10_Exercise\WeatherForecast\obj\Debug\WeatherForecast.csprojResolveAssemblyReference.cache
+C:\GitHub\MOOC_CSharp\MOOC_CSharp\Chapter10_Exercise\WeatherForecast\bin\Debug\weather.xsl

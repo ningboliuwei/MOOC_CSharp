@@ -33,91 +33,122 @@ namespace WeatherForecast
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.cmbProvince = new ComboBox();
-			this.label1 = new Label();
-			this.label2 = new Label();
-			this.cmbCity = new ComboBox();
-			this.btnQuery = new Button();
-			this.gridView = new DataGridView();
-			((ISupportInitialize)(this.gridView)).BeginInit();
+			this.cmbProvince = new System.Windows.Forms.ComboBox();
+			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.cmbCity = new System.Windows.Forms.ComboBox();
+			this.wbsResult = new System.Windows.Forms.WebBrowser();
+			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+			this.btnQuery = new System.Windows.Forms.Button();
+			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.tableLayoutPanel1.SuspendLayout();
+			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// cmbProvince
 			// 
-			this.cmbProvince.DropDownStyle = ComboBoxStyle.DropDownList;
+			this.cmbProvince.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbProvince.FormattingEnabled = true;
-			this.cmbProvince.Location = new Point(76, 21);
+			this.cmbProvince.Location = new System.Drawing.Point(67, 3);
 			this.cmbProvince.Name = "cmbProvince";
-			this.cmbProvince.Size = new Size(121, 26);
+			this.cmbProvince.Size = new System.Drawing.Size(121, 26);
 			this.cmbProvince.TabIndex = 0;
-			this.cmbProvince.SelectedIndexChanged += new EventHandler(this.cmbProvince_SelectedIndexChanged);
+			this.cmbProvince.SelectedIndexChanged += new System.EventHandler(this.cmbProvince_SelectedIndexChanged);
 			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-			this.label1.Location = new Point(12, 21);
+			this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label1.Location = new System.Drawing.Point(3, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new Size(58, 24);
+			this.label1.Size = new System.Drawing.Size(58, 24);
 			this.label1.TabIndex = 1;
 			this.label1.Text = "省份";
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-			this.label2.Location = new Point(203, 23);
+			this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.label2.Location = new System.Drawing.Point(194, 0);
 			this.label2.Name = "label2";
-			this.label2.Size = new Size(58, 24);
+			this.label2.Size = new System.Drawing.Size(58, 24);
 			this.label2.TabIndex = 2;
 			this.label2.Text = "城市";
 			// 
 			// cmbCity
 			// 
-			this.cmbCity.DropDownStyle = ComboBoxStyle.DropDownList;
+			this.cmbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbCity.FormattingEnabled = true;
-			this.cmbCity.Location = new Point(267, 24);
+			this.cmbCity.Location = new System.Drawing.Point(258, 3);
 			this.cmbCity.Name = "cmbCity";
-			this.cmbCity.Size = new Size(121, 26);
+			this.cmbCity.Size = new System.Drawing.Size(121, 26);
 			this.cmbCity.TabIndex = 3;
+			// 
+			// wbsResult
+			// 
+			this.tableLayoutPanel1.SetColumnSpan(this.wbsResult, 2);
+			this.wbsResult.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.wbsResult.Location = new System.Drawing.Point(0, 40);
+			this.wbsResult.Margin = new System.Windows.Forms.Padding(0);
+			this.wbsResult.MinimumSize = new System.Drawing.Size(20, 20);
+			this.wbsResult.Name = "wbsResult";
+			this.wbsResult.Size = new System.Drawing.Size(978, 804);
+			this.wbsResult.TabIndex = 5;
+			// 
+			// tableLayoutPanel1
+			// 
+			this.tableLayoutPanel1.ColumnCount = 2;
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+			this.tableLayoutPanel1.Controls.Add(this.btnQuery, 1, 0);
+			this.tableLayoutPanel1.Controls.Add(this.wbsResult, 0, 1);
+			this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 0);
+			this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+			this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+			this.tableLayoutPanel1.RowCount = 2;
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 844);
+			this.tableLayoutPanel1.TabIndex = 6;
 			// 
 			// btnQuery
 			// 
-			this.btnQuery.Font = new Font("宋体", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(134)));
-			this.btnQuery.Location = new Point(394, 12);
+			this.btnQuery.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnQuery.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.btnQuery.Location = new System.Drawing.Point(831, 3);
 			this.btnQuery.Name = "btnQuery";
-			this.btnQuery.Size = new Size(122, 43);
-			this.btnQuery.TabIndex = 4;
+			this.btnQuery.Size = new System.Drawing.Size(144, 34);
+			this.btnQuery.TabIndex = 5;
 			this.btnQuery.Text = "查询天气";
 			this.btnQuery.UseVisualStyleBackColor = true;
-			this.btnQuery.Click += new EventHandler(this.btnQuery_Click);
+			this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
 			// 
-			// gridView
+			// flowLayoutPanel1
 			// 
-			this.gridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridView.Location = new Point(13, 78);
-			this.gridView.Name = "gridView";
-			this.gridView.RowTemplate.Height = 30;
-			this.gridView.Size = new Size(997, 459);
-			this.gridView.TabIndex = 5;
+			this.flowLayoutPanel1.Controls.Add(this.label1);
+			this.flowLayoutPanel1.Controls.Add(this.cmbProvince);
+			this.flowLayoutPanel1.Controls.Add(this.label2);
+			this.flowLayoutPanel1.Controls.Add(this.cmbCity);
+			this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+			this.flowLayoutPanel1.Size = new System.Drawing.Size(822, 34);
+			this.flowLayoutPanel1.TabIndex = 6;
 			// 
 			// frmMain
 			// 
-			this.AutoScaleDimensions = new SizeF(9F, 18F);
-			this.AutoScaleMode = AutoScaleMode.Font;
-			this.ClientSize = new Size(1022, 549);
-			this.Controls.Add(this.gridView);
-			this.Controls.Add(this.btnQuery);
-			this.Controls.Add(this.cmbCity);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.cmbProvince);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.ClientSize = new System.Drawing.Size(978, 844);
+			this.Controls.Add(this.tableLayoutPanel1);
 			this.Name = "frmMain";
 			this.Text = "天气查询器";
-			this.Load += new EventHandler(this.frmMain_Load);
-			((ISupportInitialize)(this.gridView)).EndInit();
+			this.Load += new System.EventHandler(this.frmMain_Load);
+			this.tableLayoutPanel1.ResumeLayout(false);
+			this.flowLayoutPanel1.ResumeLayout(false);
+			this.flowLayoutPanel1.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -127,8 +158,10 @@ namespace WeatherForecast
 		private Label label1;
 		private Label label2;
 		private ComboBox cmbCity;
+		private WebBrowser wbsResult;
+		private TableLayoutPanel tableLayoutPanel1;
 		private Button btnQuery;
-		private DataGridView gridView;
+		private FlowLayoutPanel flowLayoutPanel1;
 	}
 }
 
