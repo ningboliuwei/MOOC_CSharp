@@ -1,0 +1,150 @@
+﻿<html xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:yweather="http://xml.weather.yahoo.com/ns/rss/1.0">
+  <head>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather Forecast</title>
+    <style type="text/css">
+        body{
+            color:white;
+        }
+
+        #container {
+            background-image: url(https://s.yimg.com/os/mit/media/m/weather/images/fallbacks/lead/clear_d-e618500.jpg);
+            text-shadow: 2px 2px 1px black;
+
+            padding: 5px;
+            font-family: Arial;
+        }
+
+        #general {
+            padding: 10px;
+        }
+
+        #location {
+            font-size: 40px;
+        }
+
+        #region {
+            height: 100px;
+        }
+
+        #weather {
+            margin: auto auto 15px auto;
+            font-size: 30px;
+        }
+
+        #temperature {
+            font-size: 80px;
+        }
+
+        .subContainer {
+
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            margin: 10px;
+
+        }
+
+        .subContainer th {
+            font-size: 24px;
+            text-align: left;
+            margin-bottom: 10px;
+
+        }
+
+        .forecastTable {
+            width: 100%;
+        }
+
+        .forecastTable td {
+            border: 0px solid #ffffff;
+            border-bottom-width: 1px;
+            height: 30px;
+        }
+
+        .blueText {
+            color:lightskyblue;
+            margin: 0 30px 0 10px;
+        }
+
+        .forecastDay{
+			width:200px;
+            display:inline-block;
+        }
+
+        .forecastWeather {
+            display:inline-block;
+            margin: 0px auto;
+            text-align: center;
+            width:400px;
+        }
+
+        .forecastHigh {
+            display:inline-block;
+            float: right;
+            padding-right: 10px;
+            width:30px;
+        }
+
+        .forecastLow {
+            display:inline-block;
+            float: right;
+            width:30px;
+        }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="general">
+        <div id="location">Wuhan</div>
+        <div id="region">
+        </div>
+        <div id="weather">Light Rain</div>
+        <div><span>Highest<span class="blueText">11°</span></span><span id="high">Lowest<span class="blueText">6°</span></span></div>
+        <div id="temperature">8°
+						</div>
+      </div>
+      <div class="subContainer">
+        <table class="forecastTable">
+          <tr>
+            <th>Forecast</th>
+          </tr>
+          <tr>
+            <td><span class="forecastDay">Today (28 Nov 2015)
+										</span><span class="forecastWeather">Cloudy</span><span class="forecastLow"><span class="blueText">6°</span></span><span class="forecastHigh">11°</span></td>
+          </tr>
+          <tr>
+            <td><span class="forecastDay">Sun (29 Nov 2015)
+										</span><span class="forecastWeather">Partly Cloudy</span><span class="forecastLow"><span class="blueText">5°</span></span><span class="forecastHigh">13°</span></td>
+          </tr>
+          <tr>
+            <td><span class="forecastDay">Mon (30 Nov 2015)
+										</span><span class="forecastWeather">Partly Cloudy</span><span class="forecastLow"><span class="blueText">7°</span></span><span class="forecastHigh">16°</span></td>
+          </tr>
+          <tr>
+            <td><span class="forecastDay">Tue (1 Dec 2015)
+										</span><span class="forecastWeather">Mostly Cloudy</span><span class="forecastLow"><span class="blueText">9°</span></span><span class="forecastHigh">14°</span></td>
+          </tr>
+          <tr>
+            <td><span class="forecastDay">Wed (2 Dec 2015)
+										</span><span class="forecastWeather">AM Clouds/PM Sun</span><span class="forecastLow"><span class="blueText">2°</span></span><span class="forecastHigh">12°</span></td>
+          </tr>
+        </table>
+      </div>
+      <div class="subContainer">
+        <table>
+          <tr>
+            <th>Details</th>
+          </tr>
+          <tr>
+            <td>Feels like<span class="blueText">8°</span>Visibility<span class="blueText">2.49ml</span>Humidity
+                    <span class="blueText">100%</span><div>Updated: <span class="blueText">Sat, 28 Nov 2015 7:59 pm CST</span></div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

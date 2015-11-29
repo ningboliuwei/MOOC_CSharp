@@ -1,13 +1,18 @@
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Weather Forecast</title>
     <style type="text/css">
+        body{
+            color:white;
+        }
+
         #container {
             background-image: url(https://s.yimg.com/os/mit/media/m/weather/images/fallbacks/lead/clear_d-e618500.jpg);
             text-shadow: 2px 2px 1px #000000;
-            color: #ffffff;
+
             padding: 5px;
-            font-family: "Arial";
+            font-family: Arial;
         }
 
         #general {
@@ -32,16 +37,26 @@
 
         #weather {
             margin: auto auto 15px auto;
+            font-size: 30px;
         }
 
-        #temp {
+        #temperature {
             font-size: 80px;
         }
 
         .subContainer {
+
             background-color: rgba(0, 0, 0, 0.6);
             padding: 10px;
-            margin: 0px 5px 5px 5px;
+            margin: 10px;
+
+        }
+
+        .subContainer th {
+            font-size: 24px;
+            text-align: left;
+            margin-bottom: 10px;
+
         }
 
         .forecastTable {
@@ -49,32 +64,36 @@
         }
 
         .forecastTable td {
-            border-style: solid;
-            border-width: 0px 0px 1px 0px;
-            border-color: #ffffff;
+            border: 0px solid #ffffff;
+            border-bottom-width: 1px;
             height: 30px;
         }
 
         .blueText {
-            color: #000055;
-            margin: auto 40px auto 10px;
+            color:lightskyblue;
+            margin: 0 30px 0 10px;
         }
 
-        .forecastDay {
-
+        .forecastDay{
+            width:100px;
+            display:inline-block;
         }
 
         .forecastWeather {
+            display:inline-block;
+            margin: 0px auto;
+            text-align: center;
+            width:300px;
         }
 
         .forecastHigh {
-            margin: 0 20px 0 0;
+            display:inline-block;
             float: right;
-
+            padding-right: 10px;
         }
 
         .forecastLow {
-            margin: 0 20px 0 0;
+            display:inline-block;
             float: right;
         }
 
@@ -87,21 +106,22 @@
         <div id="location">Beijing</div>
         <div id="region">Beijing, China</div>
         <div id="currentWeather">Sunny</div>
-        <div><span>Highest<span class="blueText">48</span></span><span id="generalLow">Lowest<span
-                class="blueText">30</span></span></div>
-        <div id="temp">36</div>
+        <div><span>Highest<span class="blueText">48°</span></span><span id="high">Lowest<span
+                class="blueText">30°</span></span></div>
+        <div id="temperature">36°</div>
     </div>
-
     <div class="subContainer">
         <table class="forecastTable">
             <tr>
-                <th style="text-align: left; font-size:20px;">Forecast</th>
+                <th>Forecast</th>
             </tr>
             <tr>
                 <td><span class="forecastDay">Today</span>
                     <span class="forecastWeather">Mostly Clear</span>
-                    <span class="forecastHigh">48</span>
-                    <span class="forecastLow">36</span></td>
+                    <span class="forecastLow"><span class="blueText">36°</span></span>
+                    <span class="forecastHigh">
+48°</span>
+                </td>
 
             </tr>
             <tr>
@@ -123,14 +143,14 @@
         </table>
     </div>
     <div class="subContainer">
-        <table class="detailsTable">
+        <table>
             <tr>
-                <th style="text-align: left; font-size:20px;">Details</th>
+                <th>Details</th>
             </tr>
             <tr>
-                <td>Feels like <span class="blueText">30</span>Visibility <span class="blueText">4.97ml</span>Humidity
+                <td>Feels like<span class="blueText">30</span>Visibility<span class="blueText">4.97ml</span>Humidity
                     <span class="blueText">56%</span>UV
-                    Index <span class="blueText">2(low)</span>
+                    Index<span class="blueText">2(low)</span>
                 </td>
 
             </tr>
