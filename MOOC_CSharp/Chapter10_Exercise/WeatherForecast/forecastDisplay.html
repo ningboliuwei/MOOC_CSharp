@@ -4,7 +4,7 @@
     <style type="text/css">
         #container {
             background-image: url(https://s.yimg.com/os/mit/media/m/weather/images/fallbacks/lead/clear_d-e618500.jpg);
-            text-shadow: 2px 2px 1px black;
+            text-shadow: 2px 2px 1px #000000;
             color: #ffffff;
             padding: 5px;
             font-family: "Arial";
@@ -12,6 +12,14 @@
 
         #general {
             padding: 10px;
+        }
+
+        #currentWeather {
+            font-size: 40px;
+        }
+
+        #generalLow {
+            margin: 0px 0px 0px 0px;
         }
 
         #location {
@@ -47,8 +55,8 @@
             height: 30px;
         }
 
-        .blueValue {
-            'color: cornflowerblue;
+        .blueText {
+            color: #000055;
             margin: auto 40px auto 10px;
         }
 
@@ -57,24 +65,17 @@
         }
 
         .forecastWeather {
-            width: 100%;
-            text-align: center;
-            position:relative;
-            margin:0px auto;
         }
 
         .forecastHigh {
-            width: 20px;
+            margin: 0 20px 0 0;
             float: right;
-            margin: 10px;
 
         }
 
         .forecastLow {
-            width: 20px;
+            margin: 0 20px 0 0;
             float: right;
-            margin: 10px;
-
         }
 
 
@@ -85,8 +86,9 @@
     <div id="general">
         <div id="location">Beijing</div>
         <div id="region">Beijing, China</div>
-        <div id="weather">Sunny</div>
-        <div id="highAndLow">Highest 48 Lowest 30</div>
+        <div id="currentWeather">Sunny</div>
+        <div><span>Highest<span class="blueText">48</span></span><span id="generalLow">Lowest<span
+                class="blueText">30</span></span></div>
         <div id="temp">36</div>
     </div>
 
@@ -126,9 +128,9 @@
                 <th style="text-align: left; font-size:20px;">Details</th>
             </tr>
             <tr>
-                <td>Feels like <span class="blueValue">30</span>Visibility <span class="blueValue">4.97ml</span>Humidity
-                    <span class="blueValue">56%</span>UV
-                    Index <span class="blueValue">2(low)</span>
+                <td>Feels like <span class="blueText">30</span>Visibility <span class="blueText">4.97ml</span>Humidity
+                    <span class="blueText">56%</span>UV
+                    Index <span class="blueText">2(low)</span>
                 </td>
 
             </tr>
