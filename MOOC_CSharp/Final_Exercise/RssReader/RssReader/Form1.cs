@@ -44,7 +44,7 @@ namespace RssReader
             {
                 foreach (var rss in rsses.Where(r => r.Category.ToString() == node.Name))
                 {
-                    node.Nodes.Add(new TreeNode(rss.Title.ToString(), 2, 2)
+                    node.Nodes.Add(new TreeNode(rss.Title, 2, 2)
                     {
                         Name = rss.ID.ToString(),
                         ToolTipText = rss.Description
