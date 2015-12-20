@@ -123,7 +123,8 @@ namespace WeatherForecast
 					string line = sr.ReadLine();
 					if (line != null)
 					{
-						yahooCityCodeList.Add(new YahooCityCodeRecord { CityName = line.Split(' ')[0], YahooCityCode = line.Split(' ')[1] });
+						yahooCityCodeList.Add(new YahooCityCodeRecord { CityName = line.Split(' ')[0],
+							YahooCityCode = line.Split(' ')[1] });
 					}
 				}
 			}

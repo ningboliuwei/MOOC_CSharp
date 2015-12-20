@@ -39,8 +39,8 @@ namespace WeatherForecast
 			this.cmbCity = new System.Windows.Forms.ComboBox();
 			this.wbsResult = new System.Windows.Forms.WebBrowser();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-			this.btnQuery = new System.Windows.Forms.Button();
 			this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+			this.btnQuery = new System.Windows.Forms.Button();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.flowLayoutPanel1.SuspendLayout();
 			this.SuspendLayout();
@@ -112,18 +112,6 @@ namespace WeatherForecast
 			this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 844);
 			this.tableLayoutPanel1.TabIndex = 6;
 			// 
-			// btnQuery
-			// 
-			this.btnQuery.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.btnQuery.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-			this.btnQuery.Location = new System.Drawing.Point(831, 3);
-			this.btnQuery.Name = "btnQuery";
-			this.btnQuery.Size = new System.Drawing.Size(144, 34);
-			this.btnQuery.TabIndex = 5;
-			this.btnQuery.Text = "查询天气";
-			this.btnQuery.UseVisualStyleBackColor = true;
-			this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-			// 
 			// flowLayoutPanel1
 			// 
 			this.flowLayoutPanel1.Controls.Add(this.label1);
@@ -135,6 +123,18 @@ namespace WeatherForecast
 			this.flowLayoutPanel1.Name = "flowLayoutPanel1";
 			this.flowLayoutPanel1.Size = new System.Drawing.Size(822, 34);
 			this.flowLayoutPanel1.TabIndex = 6;
+			// 
+			// btnQuery
+			// 
+			this.btnQuery.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.btnQuery.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+			this.btnQuery.Location = new System.Drawing.Point(831, 3);
+			this.btnQuery.Name = "btnQuery";
+			this.btnQuery.Size = new System.Drawing.Size(144, 34);
+			this.btnQuery.TabIndex = 5;
+			this.btnQuery.Text = "查询天气";
+			this.btnQuery.UseVisualStyleBackColor = true;
+			this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
 			// 
 			// frmMain
 			// 
@@ -160,8 +160,8 @@ namespace WeatherForecast
 		private ComboBox cmbCity;
 		private WebBrowser wbsResult;
 		private TableLayoutPanel tableLayoutPanel1;
-		private Button btnQuery;
 		private FlowLayoutPanel flowLayoutPanel1;
+		private Button btnQuery;
 	}
 }
 
