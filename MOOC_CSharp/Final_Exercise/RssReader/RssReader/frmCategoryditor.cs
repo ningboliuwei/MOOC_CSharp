@@ -13,40 +13,54 @@ namespace RssReader
 {
     public partial class frmCategoryEditor : Form
     {
-        private RssInfo _rss;
+        private readonly CategoryInfo _category;
+
+        public delegate void DataChangedHandler(object sender);
+
+        public event DataChangedHandler DataChanged;
 
         public frmCategoryEditor()
         {
             InitializeComponent();
         }
 
-        public frmCategoryEditor(RssInfo rss)
+        //通过构造函数传入要编辑的分类信息
+        public frmCategoryEditor(CategoryInfo category)
         {
             InitializeComponent();
-            if (rss != null)
+            if (category != null)
             {
-                _rss = rss;
+                _category = category;
             }
         }
 
-        private void ShowRssInfo()
+        //显示分类信息
+        private void ShowCategoryInfo()
         {
-            if (_rss != null)
+            if (_category != null)
             {
-                txtTitle.Text = _rss.Title;
-                txtUrl.Text = _rss.Url;
-                txtDescription.Text = _rss.Description;
+                txtTitle.Text = _category.CategoryName;
             }
         }
 
+        //点击 “确定”按钮
         private void btnOK_Click(object sender, EventArgs e)
         {
             string title = txtTitle.Text.Trim();
-            string url = txtUrl.Text.Trim();
-            string desciption = txtDescription.Text.Trim();
-            int category = Convert.ToInt32(Tag);
 
-            RssDAL.Add(new RssInfo() {Title = title, Description = desciption, Url = url, Category = category});
+            var newCategory = new CategoryInfo() {CategoryName = title};
+            if (_category == null)
+            {
+                //添加新的分类
+                CategoryDAL.Add(newCategory);
+            }
+            else
+            {
+                //修改已有分类
+                CategoryDAL.Update(_category.ID, newCategory);
+            }
+            //触发 DataChanged 事件
+            OnDataChanged();
             Close();
         }
 
@@ -55,9 +69,14 @@ namespace RssReader
             Close();
         }
 
-        private void frmRssEditor_Load(object sender, EventArgs e)
+        private void frmCategoryEditor_Load(object sender, EventArgs e)
         {
-            ShowRssInfo();
+            ShowCategoryInfo();
+        }
+
+        protected virtual void OnDataChanged()
+        {
+            DataChanged?.Invoke(this);
         }
     }
 }

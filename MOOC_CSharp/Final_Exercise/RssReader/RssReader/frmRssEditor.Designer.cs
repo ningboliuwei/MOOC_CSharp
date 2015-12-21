@@ -71,7 +71,7 @@
             this.txtUrl.Location = new System.Drawing.Point(103, 43);
             this.txtUrl.Name = "txtUrl";
             this.txtUrl.Size = new System.Drawing.Size(366, 28);
-            this.txtUrl.TabIndex = 5;
+            this.txtUrl.TabIndex = 1;
             // 
             // txtDescription
             // 
@@ -80,7 +80,7 @@
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(366, 94);
-            this.txtDescription.TabIndex = 4;
+            this.txtDescription.TabIndex = 2;
             // 
             // txtTitle
             // 
@@ -158,12 +158,13 @@
             // 
             // frmRssEditor
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 253);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmRssEditor";
-            this.Load += new System.EventHandler(frmRssEditor_Load);
+            this.Load += new System.EventHandler(this.frmRssEditor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

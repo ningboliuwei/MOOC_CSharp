@@ -5,6 +5,7 @@ using System.Text;
 
 namespace RssReader.Model
 {
+    //RSS 信息 Model 类
     public class RssInfo
     {
         public int ID { get; set; }

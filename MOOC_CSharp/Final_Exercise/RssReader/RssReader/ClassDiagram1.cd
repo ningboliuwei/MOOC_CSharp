@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RssReader.DAL.CategoryDAL">
+    <Position X="1.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>ACYAAAAAAAAAAAAAAAAAIAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DAL\CategoryDAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.DAL.RssDAL">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>DAL\RssDAL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.frmCategoryEditor">
+    <Position X="9.25" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="RssReader.frmCategoryEditor.DataChangedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>frmCategoryditor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAACCAACAARBEAAACAAMACAAAAAEAABQAAAQAAACA=</HashCode>
+      <FileName>frmCategoryditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.frmMain">
+    <Position X="6.5" Y="4" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAQQAQACAAAAQCIEiAAQIiNAihAQAAgAAAAAAAYCA=</HashCode>
+      <FileName>frmMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.frmRssEditor">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="RssReader.frmRssEditor.DataChangedHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>frmRssEditor.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAEKIAACAAQBEAAACCAMCCAAAAAEAABAAAAQAAACA=</HashCode>
+      <FileName>frmRssEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.Model.CategoryInfo">
+    <Position X="1.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\CategoryInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.Model.RssInfo">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggEAAAAAAAAAAAAAAAAAACAAAAAAACAA=</HashCode>
+      <FileName>Model\RssInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RssReader.Util.DBHelper">
+    <Position X="0.75" Y="4.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAEEAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Util\DBHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

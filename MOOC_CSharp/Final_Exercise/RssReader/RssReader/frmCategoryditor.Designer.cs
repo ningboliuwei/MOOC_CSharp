@@ -82,7 +82,7 @@
             this.btnCancel.Location = new System.Drawing.Point(253, 10);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(97, 46);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "取消(&C)";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -93,7 +93,7 @@
             this.btnOK.Location = new System.Drawing.Point(100, 10);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(97, 46);
-            this.btnOK.TabIndex = 4;
+            this.btnOK.TabIndex = 1;
             this.btnOK.Text = "确定(&O)";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
@@ -111,12 +111,13 @@
             // 
             // frmCategoryEditor
             // 
+            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(472, 109);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmCategoryEditor";
-            this.Load += new System.EventHandler(this.frmRssEditor_Load);
+            this.Load += new System.EventHandler(this.frmCategoryEditor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);

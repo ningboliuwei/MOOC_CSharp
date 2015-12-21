@@ -11,11 +11,14 @@ namespace RssReader.Util
 {
     public static class DBHelper
     {
+        //Access 数据库文件路径
         private static readonly string DataPath = Application.StartupPath + "\\data.mdb";
 
+        //数据库连接字符串
         private static readonly string ConnectionString = $"Provider=Microsoft.Jet.OLEDB.4.0;" +
                                                           $"Data Source={DataPath}";
 
+        //执行 SQL 命令并以 DataTable 形式返回数据
         public static DataTable GetDataTableByCommand(string commandText)
         {
             try
@@ -34,6 +37,7 @@ namespace RssReader.Util
             }
         }
 
+        //执行无返回值 SQL 命令
         public static void ExecuteNonQuery(string commandText)
         {
             try
@@ -47,7 +51,6 @@ namespace RssReader.Util
                         connection.Open();
                         command.ExecuteNonQuery();
                     }
-                   
                 }
             }
             catch (Exception ex)
