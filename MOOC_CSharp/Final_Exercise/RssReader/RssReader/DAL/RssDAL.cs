@@ -35,7 +35,7 @@ namespace RssReader.DAL
             return (from c in resultDataTable.AsEnumerable()
                 select new RssInfo()
                 {
-                    ID = Convert.ToInt32(c.Field<string>("ID")),
+                    ID = Convert.ToInt32(c.Field<int>("ID")),
                     Title = c.Field<string>("Title"),
                     Description = c.Field<string>("Description"),
                     Url = c.Field<string>("Url"),

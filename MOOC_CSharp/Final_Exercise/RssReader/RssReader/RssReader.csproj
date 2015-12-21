@@ -63,28 +63,37 @@
   <ItemGroup>
     <Compile Include="DAL\CategoryDAL.cs" />
     <Compile Include="DAL\RssDAL.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
+    <Compile Include="frmCategoryditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <Compile Include="frmCategoryditor.Designer.cs">
+      <DependentUpon>frmCategoryditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRssEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRssEditor.Designer.cs">
+      <DependentUpon>frmRssEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\CategoryInfo.cs" />
     <Compile Include="Model\RssInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\DBHelper.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
+    <EmbeddedResource Include="frmCategoryditor.resx">
+      <DependentUpon>frmCategoryditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRssEditor.resx">
+      <DependentUpon>frmRssEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
