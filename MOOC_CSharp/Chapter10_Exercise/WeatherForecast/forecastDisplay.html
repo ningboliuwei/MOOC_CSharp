@@ -9,7 +9,7 @@
 
         #container {
             background-image: url(https://s.yimg.com/os/mit/media/m/weather/images/fallbacks/lead/clear_d-e618500.jpg);
-            text-shadow: 2px 2px 1px black;
+            text-shadow: 2px 2px 1px #000000;
 
             padding: 5px;
             font-family: Arial;
@@ -17,6 +17,14 @@
 
         #general {
             padding: 10px;
+        }
+
+        #currentWeather {
+            font-size: 40px;
+        }
+
+        #generalLow {
+            margin: 0px 0px 0px 0px;
         }
 
         #location {
@@ -97,7 +105,7 @@
     <div id="general">
         <div id="location">Beijing</div>
         <div id="region">Beijing, China</div>
-        <div id="weather">Sunny</div>
+        <div id="currentWeather">Sunny</div>
         <div><span>Highest<span class="blueText">48°</span></span><span id="high">Lowest<span
                 class="blueText">30°</span></span></div>
         <div id="temperature">36°</div>
